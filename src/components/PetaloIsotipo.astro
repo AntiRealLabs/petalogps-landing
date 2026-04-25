@@ -1,0 +1,80 @@
+---
+interface Props {
+  idPrefix?: string;
+  animated?: boolean;
+  class?: string;
+  title?: string;
+}
+
+const {
+  idPrefix = "petalo",
+  animated = false,
+  class: className = "",
+  title = "PetAlo",
+} = Astro.props;
+---
+
+<svg
+  class:list={[className, animated && "isotipo-animated"]}
+  viewBox="-40 0 340 300"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby={`${idPrefix}-title`}
+>
+  <title id={`${idPrefix}-title`}>{title}</title>
+  <defs>
+    <linearGradient id={`${idPrefix}-cloudMain`} x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#B8E0F5" />
+      <stop offset="55%" stop-color="#7DB9DC" />
+      <stop offset="100%" stop-color="#4A9FD4" />
+    </linearGradient>
+    <radialGradient id={`${idPrefix}-cloudInner`} cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <path class:list={[animated && "wave-outer"]} d="M 100 52 Q 80 70 100 88" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35" />
+  <path class:list={[animated && "wave-inner"]} d="M 110 60 Q 96 70 110 80" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6" />
+  <path class:list={[animated && "wave-outer"]} d="M 160 52 Q 180 70 160 88" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35" />
+  <path class:list={[animated && "wave-inner"]} d="M 150 60 Q 164 70 150 80" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6" />
+
+  <g class:list={[animated && "heart-pulse"]}>
+    <path d="M 130 62 C 124 53, 112 56, 115 68 C 118 79, 130 88, 130 88 C 130 88, 142 79, 145 68 C 148 56, 136 53, 130 62 Z" fill="#4A9FD4" />
+  </g>
+  <line x1="130" y1="88" x2="130" y2="102" stroke="#4A9FD4" stroke-width="3.5" stroke-linecap="round" />
+
+  <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill={`url(#${idPrefix}-cloudMain)`} />
+  <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill={`url(#${idPrefix}-cloudInner)`} />
+
+  <g fill="white">
+    <g transform="translate(60 220) rotate(28) scale(0.65)">
+      <ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)" />
+      <ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)" />
+      <ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)" />
+      <ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)" />
+      <path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z" />
+    </g>
+    <g transform="translate(110 195) rotate(30) scale(0.65)">
+      <ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)" />
+      <ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)" />
+      <ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)" />
+      <ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)" />
+      <path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z" />
+    </g>
+    <g transform="translate(160 170) rotate(28) scale(0.65)">
+      <ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)" />
+      <ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)" />
+      <ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)" />
+      <ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)" />
+      <path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z" />
+    </g>
+    <g transform="translate(210 140) rotate(30) scale(0.65)">
+      <ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)" />
+      <ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)" />
+      <ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)" />
+      <ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)" />
+      <path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z" />
+    </g>
+  </g>
+</svg>

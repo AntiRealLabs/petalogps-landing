@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import About from "../components/About.astro";
+import Filosofia from "../components/Filosofia.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Navbar from "../components/Navbar.astro";
+import ParaQuien from "../components/ParaQuien.astro";
+import Problema from "../components/Problema.astro";
+import Producto from "../components/Producto.astro";
+import Waitlist from "../components/Waitlist.astro";
+---
+
+<Layout>
+  <div class="page-shell">
+    <Navbar />
+    <main id="contenido">
+      <Hero />
+      <Problema />
+      <Producto />
+      <Filosofia />
+      <ParaQuien />
+      <Waitlist />
+      <About />
+    </main>
+    <Footer />
+  </div>
+</Layout>

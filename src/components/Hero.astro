@@ -1,0 +1,42 @@
+---
+import { Bell, ChevronDown } from "@lucide/astro";
+import PetaloIsotipo from "./PetaloIsotipo.astro";
+import PetaloWordmark from "./PetaloWordmark.astro";
+---
+
+<section id="hero" class="relative flex min-h-[calc(100svh-9rem)] items-center overflow-hidden py-14 md:py-16">
+  <div class="absolute inset-x-0 top-10 h-px bg-gradient-to-r from-transparent via-horizonte/20 to-transparent"></div>
+  <div class="absolute inset-x-0 bottom-12 h-px bg-gradient-to-r from-transparent via-horizonte/20 to-transparent"></div>
+
+  <div class="container-petalo relative z-10 grid items-center gap-10 lg:grid-cols-[0.94fr_1.06fr]">
+    <div class="order-2 text-center lg:order-1 lg:text-left" data-reveal>
+      <p class="mb-4 font-bold text-horizonte-oscuro">PetAlo · Collar GPS inteligente</p>
+      <h1 class="mx-auto max-w-3xl text-5xl font-medium leading-[1.05] text-tinta md:text-6xl lg:mx-0">
+        Tecnología que cuida a tu mascota
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-tinta-suave md:text-xl lg:mx-0">
+        Un collar GPS con inteligencia artificial integrada que cuida a tu mascota como tú lo harías. Calmo. Preciso. Siempre presente.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
+        <a class="btn btn-primary" href="#waitlist">
+          <Bell aria-hidden="true" />
+          Avísame cuando lance
+        </a>
+        <a class="btn btn-secondary" href="#producto">
+          <ChevronDown aria-hidden="true" />
+          Conoce PetAlo
+        </a>
+      </div>
+    </div>
+
+    <div class="order-1 flex justify-center lg:order-2" data-reveal>
+      <div class="relative w-full max-w-[420px] p-2">
+        <PetaloIsotipo idPrefix="hero-logo" animated class="mx-auto h-auto w-full max-w-[280px] drop-shadow-[0_18px_40px_rgba(74,159,212,0.25)]" title="Logo animado de PetAlo" />
+        <div class="mt-3 text-center">
+          <PetaloWordmark class="text-6xl md:text-7xl" />
+          <p class="mt-4 font-bold text-niebla">Calmo. Preciso. Siempre presente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

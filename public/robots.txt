@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://petalogps.com/sitemap-index.xml

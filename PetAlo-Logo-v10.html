@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PetAlo · Logo v10 · Trail final</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --lienzo: #FAFCFE; --cielo: #B8E0F5; --cielo-suave: rgba(184,224,245,0.35);
+    --horizonte: #4A9FD4; --nube: #E2E8F0; --tinta: #2D3748;
+    --niebla: #718096; --pradera: #68D391; --coral: #FC8181;
+    --sombra: 0 4px 20px rgba(45,55,72,0.06);
+    --sombra-fuerte: 0 20px 60px rgba(45,55,72,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #E8F4FB 0%, #F5FAFD 50%, #FDFDFB 100%);
+    min-height: 100vh; color: var(--tinta); padding-bottom: 80px;
+  }
+  .hero { text-align: center; padding: 80px 20px 40px; }
+  .hero .super { font-size: 11px; font-weight: 700; color: var(--horizonte); text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 12px; }
+  .hero h1 { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 600; color: var(--tinta); letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 12px; }
+  .hero .tagline { color: var(--niebla); font-size: 16px; font-weight: 500; max-width: 680px; margin: 0 auto; line-height: 1.55; }
+  .big-logo { margin: 50px auto 0; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+  .big-logo .isotipo-wrap { width: 380px; height: 360px; filter: drop-shadow(0 14px 42px rgba(74,159,212,0.24)); }
+  .big-logo svg { width: 100%; height: 100%; }
+  .big-logo .wordmark-big { font-family: 'Fraunces', serif; font-size: 88px; font-weight: 500; color: var(--tinta); letter-spacing: -0.04em; line-height: 1; }
+  .big-logo .wordmark-big .a-accent { color: var(--horizonte); font-weight: 600; font-style: italic; }
+  .movement-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--pradera); color: white; padding: 10px 22px; border-radius: 100px; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; margin-top: 16px; }
+
+  .section { max-width: 1200px; margin: 80px auto; padding: 0 24px; }
+  .section-header { margin-bottom: 40px; }
+  .section-header .eyebrow { font-size: 11px; font-weight: 700; color: var(--horizonte); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 8px; }
+  .section-header h2 { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 600; color: var(--tinta); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 12px; }
+  .section-header p { color: var(--niebla); font-size: 15px; line-height: 1.6; max-width: 680px; }
+
+  .variations { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .var-card { background: white; border-radius: 20px; padding: 24px 16px; box-shadow: var(--sombra); display: flex; flex-direction: column; align-items: center; gap: 12px; min-height: 200px; justify-content: space-between; }
+  .var-card.dark { background: var(--tinta); }
+  .var-card.dark .var-label { color: rgba(255,255,255,0.7); }
+  .var-card svg { width: 100%; max-width: 150px; height: 140px; }
+  .var-label { font-size: 10px; font-weight: 700; color: var(--niebla); text-transform: uppercase; letter-spacing: 0.12em; text-align: center; }
+
+  .lockups-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+  .lockup-panel { background: white; border-radius: 20px; padding: 40px; box-shadow: var(--sombra); display: flex; align-items: center; justify-content: center; gap: 24px; min-height: 180px; }
+  .lockup-panel svg { height: 120px; width: auto; }
+  .lockup-panel .text { font-family: 'Fraunces', serif; font-size: 48px; font-weight: 500; color: var(--tinta); letter-spacing: -0.03em; }
+  .lockup-panel .text .a-accent { color: var(--horizonte); font-weight: 600; font-style: italic; }
+  .lockup-panel.dark { background: var(--tinta); }
+  .lockup-panel.dark .text { color: white; }
+  .lockup-panel.dark .text .a-accent { color: var(--cielo); }
+
+  .apps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .app-container { background: white; border-radius: 24px; padding: 40px; box-shadow: var(--sombra); display: flex; flex-direction: column; align-items: center; min-height: 520px; }
+  .app-icon-phone { background: var(--tinta); border-radius: 36px; padding: 12px; width: 220px; height: 460px; margin: 0 auto 20px; box-shadow: var(--sombra-fuerte); }
+  .app-icon-phone .screen-bg { background: linear-gradient(135deg, #2a4a6b 0%, #1a2a3a 100%); height: 100%; border-radius: 24px; padding: 56px 18px 36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 12px; align-content: flex-start; }
+  .app-icon-phone .app { width: 38px; height: 38px; background: rgba(255,255,255,0.08); border-radius: 9px; }
+  .app-icon-phone .app.featured { background: linear-gradient(135deg, #B8E0F5, #4A9FD4); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(74,159,212,0.4); }
+  .app-icon-phone .app.featured svg { width: 32px; height: 32px; }
+  .collar-mockup { background: linear-gradient(135deg, #F5E6D3 0%, #E4D2BB 100%); border-radius: 28px; width: 100%; height: 360px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 20px; }
+  .collar-mockup::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 70px; background: linear-gradient(90deg, #D4A574 0%, #B88759 50%, #D4A574 100%); transform: translateY(-50%); opacity: 0.6; }
+  .collar-tag { width: 180px; height: 180px; background: white; border-radius: 50%; box-shadow: 0 12px 40px rgba(45,55,72,0.25); display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; border: 3px solid #F5F5F5; }
+  .collar-tag svg { width: 140px; height: 140px; }
+  .app-label { font-size: 11px; font-weight: 700; color: var(--niebla); text-transform: uppercase; letter-spacing: 0.12em; text-align: center; }
+
+  @keyframes wave-pulse { 0%,100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 0.25; transform: scale(1.08); } }
+  @keyframes wave-pulse-outer { 0%,100% { opacity: 0.35; transform: scale(1); } 50% { opacity: 0.1; transform: scale(1.15); } }
+  @keyframes heart-beat { 0%,70%,100% { transform: scale(1); } 35% { transform: scale(1.08); } }
+  @keyframes paw-step { 0% { opacity: 0.2; } 30% { opacity: 1; } 100% { opacity: 1; } }
+  .wave-a { animation: wave-pulse 2.8s ease-in-out infinite; transform-origin: center; }
+  .wave-b { animation: wave-pulse-outer 2.8s ease-in-out infinite 0.35s; transform-origin: center; }
+  .heart-pulse { animation: heart-beat 1.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+  .pstep-1 { animation: paw-step 5s ease-in-out infinite 0s; }
+  .pstep-2 { animation: paw-step 5s ease-in-out infinite 0.5s; }
+  .pstep-3 { animation: paw-step 5s ease-in-out infinite 1s; }
+  .pstep-4 { animation: paw-step 5s ease-in-out infinite 1.5s; }
+  .pstep-5 { animation: paw-step 5s ease-in-out infinite 2s; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="super">PetAlo · Logo v10 · Trail final con paticas grandes</div>
+  <h1>Tres grandes, dos a medias</h1>
+  <div class="tagline">
+    Ahora el rastro de paticas se lee claramente: tres huellas completas en el medio a buen tamaño, y dos se cortan naturalmente en la entrada y salida de la nube. El movimiento es mucho más legible.
+  </div>
+
+  <div class="big-logo">
+    <div class="isotipo-wrap">
+      <svg viewBox="-40 0 340 340" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="cM" x1="50%" y1="0%" x2="50%" y2="100%">
+            <stop offset="0%" stop-color="#B8E0F5"/>
+            <stop offset="55%" stop-color="#7DB9DC"/>
+            <stop offset="100%" stop-color="#4A9FD4"/>
+          </linearGradient>
+          <radialGradient id="cMIn" cx="50%" cy="45%" r="55%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+          </radialGradient>
+          <clipPath id="clipH"><path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z"/></clipPath>
+        </defs>
+
+        <path class="wave-b" d="M 100 52 Q 80 70 100 88" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35"/>
+        <path class="wave-a" d="M 110 60 Q 96 70 110 80" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path class="wave-b" d="M 160 52 Q 180 70 160 88" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35"/>
+        <path class="wave-a" d="M 150 60 Q 164 70 150 80" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <g class="heart-pulse"><path d="M 130 62 C 124 53, 112 56, 115 68 C 118 79, 130 88, 130 88 C 130 88, 142 79, 145 68 C 148 56, 136 53, 130 62 Z" fill="#4A9FD4"/></g>
+        <line x1="130" y1="88" x2="130" y2="102" stroke="#4A9FD4" stroke-width="3.5" stroke-linecap="round"/>
+
+        <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill="url(#cM)"/>
+        <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill="url(#cMIn)"/>
+
+        <!-- 5 PAWS: 2 cropped at ends + 3 big in the middle -->
+        <g clip-path="url(#clipH)" fill="white">
+          <!-- Paw 1: bottom-left, cropped -->
+          <g class="pstep-1" transform="translate(32 255) rotate(32) scale(0.9)">
+            <ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/>
+            <ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/>
+            <ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/>
+            <ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/>
+            <path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/>
+          </g>
+          <!-- Paw 2: big, full -->
+          <g class="pstep-2" transform="translate(80 220) rotate(30) scale(0.9)">
+            <ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/>
+            <ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/>
+            <ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/>
+            <ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/>
+            <path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/>
+          </g>
+          <!-- Paw 3: big, full, center -->
+          <g class="pstep-3" transform="translate(130 182) rotate(28) scale(0.9)">
+            <ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/>
+            <ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/>
+            <ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/>
+            <ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/>
+            <path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/>
+          </g>
+          <!-- Paw 4: big, full -->
+          <g class="pstep-4" transform="translate(180 144) rotate(32) scale(0.9)">
+            <ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/>
+            <ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/>
+            <ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/>
+            <ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/>
+            <path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/>
+          </g>
+          <!-- Paw 5: top-right, cropped -->
+          <g class="pstep-5" transform="translate(230 108) rotate(30) scale(0.9)">
+            <ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/>
+            <ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/>
+            <ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/>
+            <ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/>
+            <path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="wordmark-big">pet<span class="a-accent">a</span>lo</div>
+
+    <div class="movement-badge">
+      <span>👣</span>
+      <span>3 grandes en el medio + 2 cortadas · movimiento legible</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== VARIATIONS ========== -->
+<div class="section">
+  <div class="section-header">
+    <div class="eyebrow">Variaciones</div>
+    <h2>Versiones del logo final</h2>
+  </div>
+
+  <div class="variations">
+    <!-- Primario -->
+    <div class="var-card">
+      <svg viewBox="-40 0 340 340">
+        <defs>
+          <linearGradient id="vP" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#B8E0F5"/><stop offset="100%" stop-color="#4A9FD4"/></linearGradient>
+          <clipPath id="cP"><path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z"/></clipPath>
+        </defs>
+        <path d="M 100 52 Q 80 70 100 88" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35"/>
+        <path d="M 110 60 Q 96 70 110 80" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path d="M 160 52 Q 180 70 160 88" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35"/>
+        <path d="M 150 60 Q 164 70 150 80" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path d="M 130 62 C 124 53, 112 56, 115 68 C 118 79, 130 88, 130 88 C 130 88, 142 79, 145 68 C 148 56, 136 53, 130 62 Z" fill="#4A9FD4"/>
+        <line x1="130" y1="88" x2="130" y2="102" stroke="#4A9FD4" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill="url(#vP)"/>
+        <g clip-path="url(#cP)" fill="white">
+          <g transform="translate(32 255) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(80 220) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(130 182) rotate(28) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(180 144) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(230 108) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+        </g>
+      </svg>
+      <div class="var-label">Primario</div>
+    </div>
+
+    <!-- Monocromático -->
+    <div class="var-card">
+      <svg viewBox="-40 0 340 340">
+        <defs><clipPath id="cM2"><path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z"/></clipPath></defs>
+        <path d="M 100 52 Q 80 70 100 88" stroke="#2D3748" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.4"/>
+        <path d="M 110 60 Q 96 70 110 80" stroke="#2D3748" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M 160 52 Q 180 70 160 88" stroke="#2D3748" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.4"/>
+        <path d="M 150 60 Q 164 70 150 80" stroke="#2D3748" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M 130 62 C 124 53, 112 56, 115 68 C 118 79, 130 88, 130 88 C 130 88, 142 79, 145 68 C 148 56, 136 53, 130 62 Z" fill="#2D3748"/>
+        <line x1="130" y1="88" x2="130" y2="102" stroke="#2D3748" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill="#2D3748"/>
+        <g clip-path="url(#cM2)" fill="white">
+          <g transform="translate(32 255) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(80 220) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(130 182) rotate(28) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(180 144) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(230 108) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+        </g>
+      </svg>
+      <div class="var-label">Monocromático</div>
+    </div>
+
+    <!-- Invertido -->
+    <div class="var-card dark">
+      <svg viewBox="-40 0 340 340">
+        <defs><clipPath id="cI"><path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z"/></clipPath></defs>
+        <path d="M 100 52 Q 80 70 100 88" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.4"/>
+        <path d="M 110 60 Q 96 70 110 80" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M 160 52 Q 180 70 160 88" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.4"/>
+        <path d="M 150 60 Q 164 70 150 80" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M 130 62 C 124 53, 112 56, 115 68 C 118 79, 130 88, 130 88 C 130 88, 142 79, 145 68 C 148 56, 136 53, 130 62 Z" fill="white"/>
+        <line x1="130" y1="88" x2="130" y2="102" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill="white"/>
+        <g clip-path="url(#cI)" fill="#2D3748">
+          <g transform="translate(32 255) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(80 220) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(130 182) rotate(28) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(180 144) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(230 108) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+        </g>
+      </svg>
+      <div class="var-label">Invertido</div>
+    </div>
+
+    <!-- Solo nube + trail -->
+    <div class="var-card">
+      <svg viewBox="-40 80 340 200">
+        <defs>
+          <linearGradient id="vT" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#B8E0F5"/><stop offset="100%" stop-color="#4A9FD4"/></linearGradient>
+          <clipPath id="cT"><path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z"/></clipPath>
+        </defs>
+        <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill="url(#vT)"/>
+        <g clip-path="url(#cT)" fill="white">
+          <g transform="translate(32 255) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(80 220) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(130 182) rotate(28) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(180 144) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(230 108) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+        </g>
+      </svg>
+      <div class="var-label">Solo nube + trail</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LOCKUPS ========== -->
+<div class="section">
+  <div class="section-header">
+    <div class="eyebrow">Lockups</div>
+    <h2>Con el wordmark</h2>
+  </div>
+  <div class="lockups-grid">
+    <div class="lockup-panel">
+      <svg viewBox="-40 0 340 340">
+        <defs>
+          <linearGradient id="lkH" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#B8E0F5"/><stop offset="100%" stop-color="#4A9FD4"/></linearGradient>
+          <clipPath id="cLk"><path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z"/></clipPath>
+        </defs>
+        <path d="M 100 52 Q 80 70 100 88" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35"/>
+        <path d="M 110 60 Q 96 70 110 80" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path d="M 160 52 Q 180 70 160 88" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35"/>
+        <path d="M 150 60 Q 164 70 150 80" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path d="M 130 62 C 124 53, 112 56, 115 68 C 118 79, 130 88, 130 88 C 130 88, 142 79, 145 68 C 148 56, 136 53, 130 62 Z" fill="#4A9FD4"/>
+        <line x1="130" y1="88" x2="130" y2="102" stroke="#4A9FD4" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill="url(#lkH)"/>
+        <g clip-path="url(#cLk)" fill="white">
+          <g transform="translate(32 255) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(80 220) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(130 182) rotate(28) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(180 144) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(230 108) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+        </g>
+      </svg>
+      <div class="text">pet<span class="a-accent">a</span>lo</div>
+    </div>
+
+    <div class="lockup-panel dark">
+      <svg viewBox="-40 0 340 340">
+        <defs><clipPath id="cLkD"><path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z"/></clipPath></defs>
+        <path d="M 100 52 Q 80 70 100 88" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.45"/>
+        <path d="M 110 60 Q 96 70 110 80" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+        <path d="M 160 52 Q 180 70 160 88" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.45"/>
+        <path d="M 150 60 Q 164 70 150 80" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+        <path d="M 130 62 C 124 53, 112 56, 115 68 C 118 79, 130 88, 130 88 C 130 88, 142 79, 145 68 C 148 56, 136 53, 130 62 Z" fill="white"/>
+        <line x1="130" y1="88" x2="130" y2="102" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill="white"/>
+        <g clip-path="url(#cLkD)" fill="#2D3748">
+          <g transform="translate(32 255) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(80 220) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(130 182) rotate(28) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(180 144) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+          <g transform="translate(230 108) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+        </g>
+      </svg>
+      <div class="text">pet<span class="a-accent">a</span>lo</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== APPLICATIONS ========== -->
+<div class="section">
+  <div class="section-header">
+    <div class="eyebrow">Aplicaciones</div>
+    <h2>En contexto real</h2>
+  </div>
+  <div class="apps-grid">
+    <div class="app-container">
+      <div class="app-icon-phone">
+        <div class="screen-bg">
+          <div class="app"></div><div class="app"></div><div class="app"></div><div class="app"></div>
+          <div class="app"></div><div class="app"></div>
+          <div class="app featured">
+            <svg viewBox="-40 0 340 340">
+              <defs>
+                <linearGradient id="appG" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#E8F4FB"/></linearGradient>
+                <clipPath id="cApp"><path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z"/></clipPath>
+              </defs>
+              <path d="M 100 52 Q 80 70 100 88" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.4"/>
+              <path d="M 110 60 Q 96 70 110 80" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.7"/>
+              <path d="M 160 52 Q 180 70 160 88" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.4"/>
+              <path d="M 150 60 Q 164 70 150 80" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.7"/>
+              <path d="M 130 62 C 124 53, 112 56, 115 68 C 118 79, 130 88, 130 88 C 130 88, 142 79, 145 68 C 148 56, 136 53, 130 62 Z" fill="white"/>
+              <line x1="130" y1="88" x2="130" y2="102" stroke="white" stroke-width="4" stroke-linecap="round"/>
+              <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill="url(#appG)"/>
+              <g clip-path="url(#cApp)" fill="#2C6FA0">
+                <g transform="translate(32 255) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+                <g transform="translate(80 220) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+                <g transform="translate(130 182) rotate(28) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+                <g transform="translate(180 144) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+                <g transform="translate(230 108) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+              </g>
+            </svg>
+          </div>
+          <div class="app"></div><div class="app"></div><div class="app"></div><div class="app"></div><div class="app"></div>
+        </div>
+      </div>
+      <div class="app-label">ICONO APP · iOS/ANDROID</div>
+    </div>
+
+    <div class="app-container">
+      <div class="collar-mockup">
+        <div class="collar-tag">
+          <svg viewBox="-40 0 340 340">
+            <defs>
+              <linearGradient id="tgG" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#B8E0F5"/><stop offset="100%" stop-color="#4A9FD4"/></linearGradient>
+              <clipPath id="cTg"><path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z"/></clipPath>
+            </defs>
+            <path d="M 100 52 Q 80 70 100 88" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35"/>
+            <path d="M 110 60 Q 96 70 110 80" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+            <path d="M 160 52 Q 180 70 160 88" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35"/>
+            <path d="M 150 60 Q 164 70 150 80" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+            <path d="M 130 62 C 124 53, 112 56, 115 68 C 118 79, 130 88, 130 88 C 130 88, 142 79, 145 68 C 148 56, 136 53, 130 62 Z" fill="#4A9FD4"/>
+            <line x1="130" y1="88" x2="130" y2="102" stroke="#4A9FD4" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M 45 240 C 10 240, 5 198, 42 183 C 20 148, 55 120, 92 138 C 92 92, 160 92, 168 135 C 205 115, 245 145, 222 182 C 255 200, 248 240, 210 240 Z" fill="url(#tgG)"/>
+            <g clip-path="url(#cTg)" fill="white">
+              <g transform="translate(32 255) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+              <g transform="translate(80 220) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+              <g transform="translate(130 182) rotate(28) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+              <g transform="translate(180 144) rotate(32) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+              <g transform="translate(230 108) rotate(30) scale(0.9)"><ellipse cx="-13" cy="-7" rx="5.5" ry="7" transform="rotate(-24 -13 -7)"/><ellipse cx="-5" cy="-16" rx="5.5" ry="7.5" transform="rotate(-6 -5 -16)"/><ellipse cx="5" cy="-16" rx="5.5" ry="7.5" transform="rotate(6 5 -16)"/><ellipse cx="13" cy="-7" rx="5.5" ry="7" transform="rotate(24 13 -7)"/><path d="M 0 -1 C -10 -3, -20 2, -23 11 C -25 20, -21 28, -15 30 C -9 31, -4 28, 0 26 C 4 28, 9 31, 15 30 C 21 28, 25 20, 23 11 C 20 2, 10 -3, 0 -1 Z"/></g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="app-label">COLLAR · TAG CIRCULAR</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

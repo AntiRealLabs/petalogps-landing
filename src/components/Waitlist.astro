@@ -1,0 +1,167 @@
+---
+import { Bell } from "@lucide/astro";
+
+const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? "";
+---
+
+<section id="waitlist" class="section bg-gradient-to-b from-white to-cielo/20">
+  <div class="container-petalo">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <p class="section-kicker">Lista de espera</p>
+      <h2 class="section-title">Sé de los primeros en conocer a Luna y a su PetAlo</h2>
+      <p class="section-copy">
+        Estamos en fase final de desarrollo. Suscríbete y te avisaremos antes que a nadie cuando esté listo, con un descuento especial para los primeros 100.
+      </p>
+    </div>
+
+    <form
+      class="soft-card mx-auto mt-9 grid max-w-3xl gap-5 p-5 md:grid-cols-2 md:p-7"
+      id="petalo-waitlist-form"
+      data-waitlist-form
+      data-formspree-endpoint={formspreeEndpoint}
+      action={formspreeEndpoint || "mailto:hola@petalogps.com"}
+      method="POST"
+      novalidate
+      data-reveal
+    >
+      <input type="hidden" name="_subject" value="Nueva persona en lista de espera PetAlo" />
+      <label class="hidden" aria-hidden="true">
+        No llenar
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+      </label>
+
+      <div>
+        <label class="mb-2 block font-bold text-tinta" for="name">Nombre</label>
+        <input
+          class="w-full rounded-lg border border-nube bg-white px-4 py-3 text-tinta outline-none transition-colors placeholder:text-niebla/70 focus:border-horizonte"
+          id="name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          placeholder="Tu nombre"
+          required
+        />
+      </div>
+
+      <div>
+        <label class="mb-2 block font-bold text-tinta" for="email">Correo electrónico</label>
+        <input
+          class="w-full rounded-lg border border-nube bg-white px-4 py-3 text-tinta outline-none transition-colors placeholder:text-niebla/70 focus:border-horizonte"
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="tu@email.com"
+          required
+        />
+      </div>
+
+      <div>
+        <label class="mb-2 block font-bold text-tinta" for="pet-name">Nombre de tu mascota <span class="font-semibold text-niebla">(opcional)</span></label>
+        <input
+          class="w-full rounded-lg border border-nube bg-white px-4 py-3 text-tinta outline-none transition-colors placeholder:text-niebla/70 focus:border-horizonte"
+          id="pet-name"
+          name="pet_name"
+          type="text"
+          autocomplete="off"
+          placeholder="Luna, Simón, Coco..."
+        />
+      </div>
+
+      <div>
+        <label class="mb-2 block font-bold text-tinta" for="pet-type">Tipo de mascota <span class="font-semibold text-niebla">(opcional)</span></label>
+        <select
+          class="w-full rounded-lg border border-nube bg-white px-4 py-3 text-tinta outline-none transition-colors focus:border-horizonte"
+          id="pet-type"
+          name="pet_type"
+        >
+          <option value="">Selecciona una opción</option>
+          <option value="perro">Perro</option>
+          <option value="gato">Gato</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="md:col-span-2">
+        <button class="btn btn-primary w-full" type="submit" data-submit-button>
+          <Bell aria-hidden="true" />
+          <span data-submit-label>Avísame cuando lance</span>
+        </button>
+        <p class="mt-3 text-center text-sm font-semibold text-niebla">
+          No spam. No vendemos tu correo. Solo te avisamos cuando PetAlo esté listo.
+        </p>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="form-message form-message--fallback" data-form-message aria-live="polite" hidden></p>
+        <noscript>
+          <p class="form-message form-message--fallback">
+            Por ahora escríbenos a <a href="mailto:hola@petalogps.com">hola@petalogps.com</a> y te agregamos manualmente a la lista.
+          </p>
+        </noscript>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script is:inline>
+  const waitlistForm = document.querySelector("[data-waitlist-form]");
+
+  if (waitlistForm) {
+    const message = waitlistForm.querySelector("[data-form-message]");
+    const submitButton = waitlistForm.querySelector("[data-submit-button]");
+    const submitLabel = waitlistForm.querySelector("[data-submit-label]");
+    const endpoint = waitlistForm.dataset.formspreeEndpoint?.trim();
+    const fallbackMessage =
+      '📬 Por ahora <a href="mailto:hola@petalogps.com">escríbenos a hola@petalogps.com</a> y te agregamos manualmente a la lista.';
+
+    const setMessage = (type, html) => {
+      message.hidden = false;
+      message.className = `form-message form-message--${type}`;
+      message.innerHTML = html;
+    };
+
+    const setLoading = (isLoading) => {
+      submitButton.disabled = isLoading;
+      submitButton.setAttribute("aria-busy", String(isLoading));
+      submitButton.classList.toggle("opacity-75", isLoading);
+      submitLabel.textContent = isLoading ? "Enviando..." : "Avísame cuando lance";
+    };
+
+    waitlistForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!waitlistForm.reportValidity()) {
+        return;
+      }
+
+      if (!endpoint) {
+        setMessage("fallback", fallbackMessage);
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: new FormData(waitlistForm),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          waitlistForm.reset();
+          setMessage("success", "🌱 ¡Gracias! Te avisaremos pronto. Mientras tanto, dale un abrazo a tu mascota de nuestra parte.");
+        } else {
+          setMessage("fallback", fallbackMessage);
+        }
+      } catch {
+        setMessage("fallback", fallbackMessage);
+      } finally {
+        setLoading(false);
+      }
+    });
+  }
+</script>

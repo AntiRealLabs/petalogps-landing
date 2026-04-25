@@ -1,0 +1,23 @@
+{
+  "name": "petalo-landing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/generate-assets.mjs && astro build",
+    "preview": "astro preview",
+    "generate:assets": "node scripts/generate-assets.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
+    "@tailwindcss/vite": "^4.2.4",
+    "@vercel/analytics": "^2.0.1",
+    "astro": "^6.1.9",
+    "@lucide/astro": "^1.11.0",
+    "tailwindcss": "^4.2.4"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}

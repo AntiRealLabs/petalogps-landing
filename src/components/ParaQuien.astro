@@ -1,0 +1,51 @@
+---
+import { Gem, Heart, Leaf, Smartphone } from "@lucide/astro";
+
+const profiles = [
+  {
+    icon: Heart,
+    title: "Tu mascota es de la familia.",
+    text: "No es solo un perro. Es Luna, Simón, Coco. Y quieres lo mejor para ellos.",
+  },
+  {
+    icon: Smartphone,
+    title: "Quieres tranquilidad sin obsesión.",
+    text: "No quieres tener el celular en la mano todo el día. Quieres saber que cuando algo importe, te enterarás.",
+  },
+  {
+    icon: Gem,
+    title: "Valoras el diseño y la simplicidad.",
+    text: "Te molestan los productos toscos, agresivos y mal pensados. Quieres algo que se sienta bien tener.",
+  },
+  {
+    icon: Leaf,
+    title: "Crees en tecnología con propósito.",
+    text: "No tecnología por tecnología. Tecnología que mejora la vida de quienes amas, incluyendo a los que no hablan.",
+  },
+];
+---
+
+<section id="para-quien" class="section">
+  <div class="container-petalo">
+    <div class="section-header" data-reveal>
+      <p class="section-kicker">Para quién es</p>
+      <h2 class="section-title">PetAlo es para ti si...</h2>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-2">
+      {
+        profiles.map(({ icon: Icon, title, text }) => (
+          <article class="soft-card flex gap-5 p-6" data-reveal>
+            <div class="icon-badge shrink-0">
+              <Icon aria-hidden="true" />
+            </div>
+            <div>
+              <h3 class="text-2xl">{title}</h3>
+              <p class="mt-3">{text}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

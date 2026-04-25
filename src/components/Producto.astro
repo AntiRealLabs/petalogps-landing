@@ -1,0 +1,68 @@
+---
+import { BatteryCharging, Cloud, HeartPulse, MapPinned, Palette, MessageCircle } from "@lucide/astro";
+import PetaloIsotipo from "./PetaloIsotipo.astro";
+
+const features = [
+  {
+    icon: MapPinned,
+    title: "GPS inteligente con IA",
+    text: "Solo se enciende cuando hace falta. Aprende los patrones de tu mascota y te avisa cuando algo es realmente distinto.",
+  },
+  {
+    icon: BatteryCharging,
+    title: "Hasta 7 días de batería",
+    text: "Diseñado para que cargues una vez por semana, no todas las noches. Como un Apple Watch, pero para tu mascota.",
+  },
+  {
+    icon: HeartPulse,
+    title: "Cuida la salud, no solo la ubicación",
+    text: "Detecta movimiento, descanso, ejercicio y patrones inusuales. Te ayuda a entender mejor a tu compañero.",
+  },
+  {
+    icon: Cloud,
+    title: "Conexión segura en la nube",
+    text: "Comunicación cifrada de extremo a extremo. Ni nosotros podemos leer tus datos. Solo tú y tu mascota.",
+  },
+  {
+    icon: Palette,
+    title: "Diseño hecho con cariño",
+    text: "Pequeño, ligero y cómodo para mascotas de 3 kg en adelante. Resistente al agua y al barro.",
+  },
+  {
+    icon: MessageCircle,
+    title: "App con personalidad",
+    text: "No alertas estridentes. Conversaciones suaves. “Luna está bien, descansando en el sofá”.",
+  },
+];
+---
+
+<section id="producto" class="section">
+  <div class="container-petalo">
+    <div class="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      <div data-reveal>
+        <p class="section-kicker">Conoce PetAlo</p>
+        <h2 class="section-title">PetAlo, el primer collar que entiende a tu mascota</h2>
+        <p class="section-copy">
+          Tracking, actividad, batería y contexto emocional en una experiencia pensada para acompañarte sin invadirte.
+        </p>
+        <div class="mt-9 rounded-lg border border-horizonte/20 bg-cielo/20 p-8">
+          <PetaloIsotipo idPrefix="product-logo" class="mx-auto w-full max-w-[260px]" title="Isotipo PetAlo" />
+        </div>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        {
+          features.map(({ icon: Icon, title, text }) => (
+            <article class="soft-card p-5" data-reveal>
+              <div class="icon-badge mb-4">
+                <Icon aria-hidden="true" />
+              </div>
+              <h3 class="text-xl">{title}</h3>
+              <p class="mt-2 text-[0.98rem]">{text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

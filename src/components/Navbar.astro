@@ -1,0 +1,25 @@
+---
+import { Bell } from "@lucide/astro";
+import PetaloIsotipo from "./PetaloIsotipo.astro";
+import PetaloWordmark from "./PetaloWordmark.astro";
+---
+
+<header class="sticky top-0 z-50 border-b border-white/60 bg-lienzo/76 backdrop-blur-xl">
+  <nav class="container-petalo flex min-h-[4.5rem] items-center justify-between gap-4" aria-label="Navegación principal">
+    <a href="#hero" class="flex items-center gap-2" aria-label="Ir al inicio de PetAlo">
+      <PetaloIsotipo idPrefix="nav-logo" class="h-9 w-10" title="Isotipo PetAlo" />
+      <PetaloWordmark class="text-2xl" />
+    </a>
+
+    <div class="hidden items-center gap-7 text-sm font-bold text-tinta-suave md:flex">
+      <a class="transition-colors hover:text-horizonte-oscuro" href="#producto">Producto</a>
+      <a class="transition-colors hover:text-horizonte-oscuro" href="#filosofia">Filosofía</a>
+      <a class="transition-colors hover:text-horizonte-oscuro" href="#contacto">Contacto</a>
+    </div>
+
+    <a class="btn btn-primary hidden sm:inline-flex" href="#waitlist">
+      <Bell aria-hidden="true" />
+      Avísame cuando lance
+    </a>
+  </nav>
+</header>

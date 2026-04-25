@@ -1,0 +1,75 @@
+---
+import { BellOff, BatteryFull, ShieldCheck } from "@lucide/astro";
+---
+
+<section id="filosofia" class="section section--soft">
+  <div class="container-petalo">
+    <div class="grid items-center gap-12 lg:grid-cols-[1fr_0.86fr]">
+      <div data-reveal>
+        <p class="section-kicker">Filosofía calm tech</p>
+        <h2 class="section-title">La tecnología más poderosa es la que casi no se nota</h2>
+        <div class="mt-6 space-y-5 text-lg">
+          <p>
+            PetAlo no te bombardea con notificaciones. No te despierta a las 3 a.m. con alertas falsas. No te hace sentir que tu mascota está siempre en peligro.
+          </p>
+          <p>
+            En cambio, está siempre vigilante en silencio. Solo aparece cuando importa. Habla suave, como un amigo que está al pendiente.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-3 sm:grid-cols-3">
+          <div class="flex items-center gap-3 rounded-lg border border-horizonte/20 bg-white/70 p-3 font-bold text-tinta-suave">
+            <BellOff class="h-5 w-5 text-horizonte-oscuro" aria-hidden="true" />
+            Sin ruido
+          </div>
+          <div class="flex items-center gap-3 rounded-lg border border-horizonte/20 bg-white/70 p-3 font-bold text-tinta-suave">
+            <ShieldCheck class="h-5 w-5 text-horizonte-oscuro" aria-hidden="true" />
+            Con criterio
+          </div>
+          <div class="flex items-center gap-3 rounded-lg border border-horizonte/20 bg-white/70 p-3 font-bold text-tinta-suave">
+            <BatteryFull class="h-5 w-5 text-horizonte-oscuro" aria-hidden="true" />
+            Sin obsesión
+          </div>
+        </div>
+      </div>
+
+      <div class="relative" data-reveal>
+        <div class="mx-auto max-w-[360px] rounded-[2rem] border-[10px] border-tinta bg-tinta p-3 shadow-lift">
+          <div class="min-h-[520px] rounded-[1.35rem] bg-gradient-to-b from-[#EAF6FC] to-white p-5">
+            <div class="mx-auto mb-5 h-1.5 w-20 rounded-full bg-tinta/20"></div>
+            <div class="rounded-lg border border-white/80 bg-white/88 p-4 shadow-soft backdrop-blur">
+              <div class="flex items-start gap-3">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-cielo/70 text-xl" aria-hidden="true">
+                  🌤️
+                </div>
+                <div>
+                  <p class="font-bold text-tinta">Luna al 87%</p>
+                  <p class="mt-1 text-sm text-tinta-suave">5 días de energía. Descansando en el sofá.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 rounded-lg border border-horizonte/20 bg-white/65 p-4">
+              <p class="text-sm font-bold text-horizonte-oscuro">Hoy</p>
+              <div class="mt-4 grid grid-cols-7 gap-2" aria-hidden="true">
+                <span class="h-16 rounded-lg bg-cielo/40"></span>
+                <span class="h-24 rounded-lg bg-horizonte/35"></span>
+                <span class="h-20 rounded-lg bg-cielo/60"></span>
+                <span class="h-28 rounded-lg bg-horizonte/50"></span>
+                <span class="h-14 rounded-lg bg-cielo/45"></span>
+                <span class="h-20 rounded-lg bg-pradera/45"></span>
+                <span class="h-12 rounded-lg bg-cielo/45"></span>
+              </div>
+            </div>
+
+            <div class="mt-8 space-y-3">
+              <div class="h-3 w-8/12 rounded-full bg-horizonte/25"></div>
+              <div class="h-3 w-10/12 rounded-full bg-horizonte/18"></div>
+              <div class="h-3 w-6/12 rounded-full bg-horizonte/14"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
