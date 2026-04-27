@@ -1,11 +1,12 @@
 ---
 interface Props {
   class?: string;
+  tm?: boolean;
 }
 
-const { class: className = "" } = Astro.props;
+const { class: className = "", tm = false } = Astro.props;
 ---
 
 <span class:list={["petalo-wordmark", className]} aria-label="PetAlo">
-  pet<span class="petalo-wordmark__a">a</span>lo
+  pet<span class="petalo-wordmark__a">a</span>lo{tm && <sup class="ml-0.5 align-super font-sans text-[0.35em] font-bold tracking-normal text-horizonte-oscuro">™</sup>}
 </span>
